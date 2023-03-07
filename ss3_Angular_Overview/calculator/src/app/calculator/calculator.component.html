@@ -1,0 +1,14 @@
+<meta charset="utf-8">
+<p>Máy tính</p>
+<!--Tính các phép tính-->
+<p>First Number : </p>
+<input type="text" #firstNumber>
+<p>Second Number :</p>
+<input type="text" #secondNumber>
+<br>
+<button (click)="sum(firstNumber.value,secondNumber.value)">Cộng</button>
+<button (click)="minus(firstNumber.value,secondNumber.value)">Trừ</button>
+<button (click)="double(firstNumber.value,secondNumber.value)">Nhân</button>
+<button (click)="division(firstNumber.value,secondNumber.value)">Chia</button>
+<br>
+{{result}}
