@@ -30,6 +30,11 @@ export class CalculatorComponent implements OnInit {
   }
 
   division(firstNumber: string, secondNumber: string) {
-    this.result=parseInt(firstNumber,10)/parseInt(secondNumber,10);
+    // @ts-ignore
+    if (secondNumber == 0){
+      document.write("lỗi chia cho 0 ");
+    }else {
+      this.result=parseInt(firstNumber,10)/parseInt(secondNumber,10);
+    }
   }
 }
