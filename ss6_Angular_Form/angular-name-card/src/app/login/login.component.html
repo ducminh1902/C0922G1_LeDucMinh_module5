@@ -1,0 +1,15 @@
+<h1>LOGIN ACCOUNT</h1>
+<form novalidate [formGroup]="rfLogin">
+  <h5>Email :</h5>
+  <input type="text"  id="email" formControlName="email">
+  <p *ngIf="rfLogin.controls.email.touched && rfLogin.controls.email?.errors?.required" style="color: red">Bắt buộc nhập</p>
+  <p *ngIf="rfLogin.controls.email.touched && rfLogin.controls.email?.errors?.email" style="color: red">Phải đúng định dạng mail</p>
+  <br>
+  <h5>Password :</h5>
+  <input type="password" id="password" formControlName="password">
+  <p *ngIf="rfLogin.controls.password.touched && rfLogin.controls.password?.errors?.required" style="color: red">Bắt buộc nhập</p>
+  <p *ngIf="rfLogin.controls.password.touched && rfLogin.controls.password?.errors?.minlength" style="color: red">Password tối thiểu 6 ký tự</p>
+<br>
+  <button type="submit">Login</button>
+</form>
+

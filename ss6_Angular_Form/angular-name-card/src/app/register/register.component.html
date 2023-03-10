@@ -1,1 +1,38 @@
-<p>register works!</p>
+<h1>Form Đăng Ký</h1>
+
+<form novalidate [formGroup]="rfRegister"  >
+<p>Email :</p>
+  <input type="text" id="email" formControlName="email">
+  <p *ngIf="rfRegister.controls.email.touched && rfRegister.controls.email?.errors?.required" style="color: red">Bắt buộc nhập</p>
+  <p *ngIf="rfRegister.controls.email.touched && rfRegister.controls.email?.errors?.pattern" style="color: red">Phải đúng định dạng email</p>
+<br>
+  <p>Password</p>
+  <input type="password" id="password" formControlName="password">
+  <p *ngIf="rfRegister.controls.password.touched && rfRegister.controls.password?.errors?.required" style="color: red">Bắt buộc nhập</p>
+  <p *ngIf="rfRegister.controls.password.touched && rfRegister.controls.password?.errors?.minlength" style="color: red">Password tối thiểu 6 ký tự</p>
+  <br>
+  <p>Confirm Password</p>
+  <input type="password" id="confirmPassword" formControlName="confirmPassWord">
+  <p *ngIf="rfRegister.controls.confirmPassWord.touched && rfRegister.controls.confirmPassWord?.errors?.required" style="color: red">Bắt buộc nhập</p>
+  <p *ngIf="rfRegister.controls.confirmPassWord.touched && rfRegister.controls.confirmPassWord.value != rfRegister.controls.password.value" style="color: red">Confirm Password phải giống Password</p>
+  <br>
+  <p>Country:</p>
+  <select id="country" formControlName="country">
+    <option>Việt Nam</option>
+    <option>Hoa Kỳ</option>
+  </select>
+  <p *ngIf="rfRegister.controls.country.touched && rfRegister.controls.country?.errors?.required" style="color: red">Bắt buộc lựa chọn</p>
+  <br>
+  <p>Age: </p>
+  <input type="text" id="age" formControlName="age">
+  <p *ngIf="rfRegister.controls.age.touched && rfRegister.controls.age?.errors?.min" style="color: red">Tuổi >=18</p>
+  <p *ngIf="rfRegister.controls.age.touched && rfRegister.controls.age?.errors?.required" style="color: red">Bắt buộc nhập</p>
+  <br>
+  <p>Phone Number :</p>
+  <input type="text" id="phoneNumber" formControlName="phone">
+  <p *ngIf="rfRegister.controls.phone.touched && rfRegister.controls.phone?.errors?.required" style="color: red">Bắt buộc nhập</p>
+  <p *ngIf="rfRegister.controls.phone.touched && rfRegister.controls.phone?.errors?.pattern" style="color: red">Bắt đầu với +84, và theo sau là 9 đến 10 chữ số.</p>
+  <br>
+  <button type="submit">Create New Account</button>
+</form>
+
