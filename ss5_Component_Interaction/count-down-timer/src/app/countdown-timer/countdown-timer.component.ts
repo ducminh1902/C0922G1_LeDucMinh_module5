@@ -17,6 +17,8 @@ export class CountdownTimerComponent implements OnInit {
   finish = new EventEmitter<boolean>();
   private intervalId = 0;
 
+  constructor() { }
+
   ngOnChanges(changes: SimpleChanges) {
     if ('seconds' in changes) {
       let v = changes.seconds.currentValue;
@@ -69,7 +71,7 @@ export class CountdownTimerComponent implements OnInit {
       }
     }, 1000);
   }
-  constructor() { }
+
 
 
 
