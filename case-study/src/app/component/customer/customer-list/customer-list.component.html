@@ -1,1 +1,28 @@
-<p>customer-list works!</p>
+<h1>Danh Sách Khách Hàng</h1>
+<table>
+  <tr>
+    <th>#</th>
+    <th>Tên Khách Hàng<th>
+    <th>Ngày Sinh<th>
+    <th>Giới Tính<th>
+    <th>CCCD<th>
+    <th>Số Điện Thoại<th>
+    <th>Email<th>
+    <th>Địa Chỉ</th><th>
+  </tr>
+  <tr *ngFor="let customer of customes;index as i ">
+    <td scope="row">{{i + 1}}</td>
+    <td>{{customer.name}}</td>
+    <td>{{customer.dateOfBirth}}</td>
+    <td *ngIf="customer.gender==1">
+      Nam
+    </td>
+    <td *ngIf="customer.gender==0">
+      Nữ
+    </td>
+    <td>{{customer.idCard}}</td>
+    <td>{{customer.phoneNumber}}</td>
+    <td>{{customer.email}}</td>
+    <td>{{customer.address}}</td>
+  </tr>
+</table>

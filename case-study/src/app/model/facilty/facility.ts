@@ -11,5 +11,5 @@ export interface Facility {
   poolArea ?:number;
   numberOfFloor?:number;
   facilityFree?:string;
-  facilityType?:FacilityType;
+  // facilityType?:FacilityType;
 }
