@@ -1,1 +1,15 @@
-<p>contract-create works!</p>
+<h1>Danh Sách Hợp Đồng</h1>
+<table border="1">
+  <tr>
+    <th>#</th>
+    <th>Ngày Bắt Đầu</th>
+    <th>Ngày Kết Thúc</th>
+    <th>Đặt Cọc</th>
+  </tr>
+  <tr *ngFor="let contract of contracts, index as i">
+    <td scope="row">{{i + 1}}</td>
+    <td>{{contract.startDate}}</td>
+    <td>{{contract.endDate}}</td>
+    <td>{{contract.deposite}}(triệu)</td>
+  </tr>
+</table>

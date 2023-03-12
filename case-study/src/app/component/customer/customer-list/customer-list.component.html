@@ -1,5 +1,5 @@
 <h1>Danh Sách Khách Hàng</h1>
-<table>
+<table class="table table-striped">
   <tr>
     <th>#</th>
     <th>Tên Khách Hàng<th>
@@ -8,7 +8,7 @@
     <th>CCCD<th>
     <th>Số Điện Thoại<th>
     <th>Email<th>
-    <th>Địa Chỉ</th><th>
+    <th>Địa Chỉ</th>
   </tr>
   <tr *ngFor="let customer of customes;index as i ">
     <td scope="row">{{i + 1}}</td>
