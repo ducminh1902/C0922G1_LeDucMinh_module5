@@ -1,0 +1,15 @@
+<h1 style="text-align: center">Từ Điển Anh Việt</h1>
+<table>
+  <tr>
+    <th>#</th>
+    <th>VietNamese</th>
+    <th>English</th>
+    <th>Chi tiết</th>
+  </tr>
+  <tr *ngFor="let word of words ;index as i">
+   <td scope="row">{{i +1}}</td>
+    <td>{{word.vietNam}}</td>
+    <td>{{word.english}}</td>
+    <td><a [routerLink]="['/dictionary/detail',word.id]">Chi tiết</a></td>
+  </tr>
+</table>
