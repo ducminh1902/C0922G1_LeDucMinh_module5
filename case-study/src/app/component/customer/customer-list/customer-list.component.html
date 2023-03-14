@@ -1,17 +1,23 @@
-<h1>Danh Sách Khách Hàng</h1>
+<a routerLink="/customer/create">Thêm Mới</a>
+<h1 style="text-align: center">Danh Sách Khách Hàng</h1>
 <table class="table table-striped">
+  <thead>
   <tr>
-    <th>#</th>
-    <th>Tên Khách Hàng<th>
-    <th>Ngày Sinh<th>
-    <th>Giới Tính<th>
-    <th>CCCD<th>
-    <th>Số Điện Thoại<th>
-    <th>Email<th>
+    <th>STT</th>
+    <th>Name</th>
+    <th>Date</th>
+    <th>Giới Tính</th>
+    <th>CCCD</th>
+    <th>Số Điện Thoại</th>
+    <th>Email</th>
     <th>Địa Chỉ</th>
+    <th>Chuc Nang</th>
+    <th>Chuc Nang</th>
   </tr>
-  <tr *ngFor="let customer of customes;index as i ">
-    <td scope="row">{{i + 1}}</td>
+  </thead>
+  <tbody>
+  <tr *ngFor="let customer of customers;index as i">
+    <td>{{i + 1}}</td>
     <td>{{customer.name}}</td>
     <td>{{customer.dateOfBirth}}</td>
     <td *ngIf="customer.gender==1">
@@ -24,5 +30,9 @@
     <td>{{customer.phoneNumber}}</td>
     <td>{{customer.email}}</td>
     <td>{{customer.address}}</td>
+    <td><button class="btn btn-primary">Xóa</button></td>
+    <td><button [routerLink]="['/customer/update/',customer.id]">Sửa</button></td>
   </tr>
+  </tbody>
+
 </table>

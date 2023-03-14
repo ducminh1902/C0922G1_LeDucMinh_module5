@@ -1,0 +1,66 @@
+<h1 style="text-align: center">Danh Sách Khách Hàng</h1>
+
+<!--<table class="table table-danger">-->
+<!--  <tr>-->
+<!--    <th>#</th>-->
+<!--    <th>Tên Khách Hàng<th>-->
+<!--    <th>Ngày Sinh<th>-->
+<!--    <th>Giới Tính<th>-->
+<!--    <th>CCCD<th>-->
+<!--    <th>Số Điện Thoại<th>-->
+<!--    <th>Email<th>-->
+<!--    <th>Địa Chỉ</th>-->
+<!--  </tr>-->
+<!--  <tr *ngFor="let customer of customes;index as i ">-->
+<!--    <td>{{i + 1}}</td>-->
+<!--    <td>{{customer.name}}</td>-->
+<!--    <td>{{customer.dateOfBirth}}</td>-->
+<!--    <td>bbb</td>-->
+<!--    <td *ngIf="customer.gender==1">-->
+<!--      Nam-->
+<!--    </td>-->
+<!--    <td *ngIf="customer.gender==0">-->
+<!--      Nữ-->
+<!--    </td>-->
+<!--    <td>{{customer.idCard}}</td>-->
+<!--    <td>{{customer.phoneNumber}}</td>-->
+<!--    <td>{{customer.email}}</td>-->
+<!--    <td>{{customer.address}}</td>-->
+
+<!--  </tr>-->
+<!--</table>-->
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>STT</th>
+    <th>Name</th>
+    <th>Date</th>
+    <th>Giới Tính</th>
+    <th>CCCD</th>
+    <th>Số Điện Thoại</th>
+    <th>Email</th>
+    <th>Địa Chỉ</th>
+    <th>Chuc Nang</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let customer of customers;index as i">
+    <td>{{i + 1}}</td>
+    <td>{{customer.name}}</td>
+    <td>{{customer.dateOfBirth}}</td>
+    <td *ngIf="customer.gender==1">
+      Nam
+    </td>
+    <td *ngIf="customer.gender==0">
+      Nữ
+    </td>
+    <td>{{customer.idCard}}</td>
+    <td>{{customer.phoneNumber}}</td>
+    <td>{{customer.email}}</td>
+    <td>{{customer.address}}</td>
+    <td><button class="btn btn-primary">Xóa</button></td>
+  </tr>
+  </tbody>
+
+</table>

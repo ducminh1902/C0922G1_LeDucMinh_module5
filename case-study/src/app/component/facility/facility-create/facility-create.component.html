@@ -1,1 +1,42 @@
-<p>facility-create works!</p>
+<h1>Điền thông tin dịch vụ</h1>
+<form [formGroup]="facilityForm" (ngSubmit)="add()" >
+  <table>
+    <tr>
+      <td>Tên dịch vụ</td>
+      <td><input type="text" formControlName="name"></td>
+    </tr>
+    <tr>
+      <td>Diện tích</td>
+      <td><input type="text" formControlName="area"></td>
+    </tr>
+    <tr>
+      <td>Giá tiền</td>
+      <td><input type="text" formControlName="cost"></td>
+    </tr>
+    <tr>
+      <td>Số lượng người</td>
+      <td><input type="text" formControlName="maxpeople"></td>
+    </tr>
+    <tr>
+      <td>Tiêu chuẩn phòng</td>
+      <td><input type="text" formControlName="standardRoom"></td>
+    </tr>
+    <tr>
+      <td>Dịch vụ khác</td>
+      <td><input type="text" formControlName="descriptionOtherConvenience"></td>
+    </tr>
+    <tr>
+      <td>Diện tích hồ bơi</td>
+      <td><input type="text" formControlName="poolArea"></td>
+    </tr>
+    <tr>
+      <td>Số tầng</td>
+      <td><input type="text" formControlName="numberOfFloor"></td>
+    </tr>
+    <tr>
+      <td>Tiện ích</td>
+      <td><input type="text" formControlName="facilityFree"></td>
+    </tr>
+  </table>
+  <button type="submit">Thêm mới dịch vụ</button>
+</form>

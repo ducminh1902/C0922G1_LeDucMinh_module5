@@ -1,0 +1,72 @@
+<!--<h1 style="text-align: center">Danh Sách Dịch Vụ</h1>-->
+<!--<table class="table table-striped">-->
+<!--  <tr>-->
+<!--    <th>#</th>-->
+<!--    <th>Tên Dịch Vụ</th>-->
+<!--    <th>Diện Tích</th>-->
+<!--    <th>Giá Tiền</th>-->
+<!--    <th>Số Lượng Người</th>-->
+<!--    <th>Tiêu Chuẩn Phòng</th>-->
+<!--    <th>Tiện Ích</th>-->
+<!--    <th>Diện Tích Hồ Bơi</th>-->
+<!--    <th>Số Tầng</th>-->
+<!--    <th>Diện Vụ Khác</th>-->
+<!--  </tr>-->
+<!--  <tr *ngFor="let facility of facilities;index as i">-->
+<!--    <td scope="row">{{i +1}}</td>-->
+<!--    <td>{{facility.name}}</td>-->
+<!--    <td>{{facility.area}}</td>-->
+<!--    <td>{{facility.cost}}</td>-->
+<!--    <td>{{facility.maxpeople}}</td>-->
+<!--    <td>{{facility.standardRoom}}</td>-->
+<!--    <td>{{facility.descriptionOtherConvenience}}</td>-->
+<!--    <td>{{facility.poolArea}}</td>-->
+<!--    <td>{{facility.numberOfFloor}}</td>-->
+<!--    <td>{{facility.facilityFree}}</td>-->
+<!--  </tr>-->
+<!--</table>-->
+
+
+
+<div class="container">
+
+  <h2 style="text-align: center">Danh Sách Dịch Vụ</h2>
+  <table class="table table-striped">
+    <thead>
+    <tr style="color: orangered">
+      <th>#</th>
+      <th>Tên Dịch Vụ</th>
+      <th>Diện Tích</th>
+      <th>Giá Tiền</th>
+      <th>Số Lượng Người</th>
+      <th>Tiêu Chuẩn Phòng</th>
+      <th>Tiện Ích</th>
+      <th>Diện Tích Hồ Bơi</th>
+      <th>Số Tầng</th>
+      <th>Dịch Vụ Khác</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let facility of facilities;index as i">
+      <td scope="row">{{i +1}}</td>
+      <td>{{facility.name}}</td>
+      <td>{{facility.area}}</td>
+      <td>{{facility.cost}}</td>
+      <td>{{facility.maxpeople}}</td>
+      <td>{{facility.standardRoom}}</td>
+      <td>{{facility.descriptionOtherConvenience}}</td>
+      <td>{{facility.poolArea}}</td>
+      <td>{{facility.numberOfFloor}}</td>
+      <td>{{facility.facilityFree}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+
+
+
+
+
+
+</div>
+<!-- /.container -->
