@@ -12,12 +12,23 @@ export class CustomerListComponent implements OnInit {
   // @ts-ignore
   customers:Customer[]=[];
 
+  item: Customer= {};
+
   constructor(private customerService: CustomerService) { }
 
   ngOnInit(): void {
     this.getAll();
   }
    getAll(){
-   this.customers= this.customerService.getAll();
+   this.customerService.getAll().subscribe(next =>{
+     this.customers = next;
+   })
+   }
+
+   delete(id: number){
+     this.customerService.deleteCustomer(this.item.id).subscribe(next => {
+       alert("xóa thành công");
+       this.ngOnInit();
+     })
    }
 }

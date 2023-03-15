@@ -1,5 +1,6 @@
-<a routerLink="/customer/create">Thêm Mới</a>
+
 <h1 style="text-align: center">Danh Sách Khách Hàng</h1>
+<a routerLink="/customer/create">Thêm Mới Khách Hàng</a>
 <table class="table table-striped">
   <thead>
   <tr>
@@ -11,8 +12,9 @@
     <th>Số Điện Thoại</th>
     <th>Email</th>
     <th>Địa Chỉ</th>
-    <th>Chuc Nang</th>
-    <th>Chuc Nang</th>
+    <th>Loại Khách</th>
+    <th>Chức Năng</th>
+    <th>Chức Năng</th>
   </tr>
   </thead>
   <tbody>
@@ -30,9 +32,30 @@
     <td>{{customer.phoneNumber}}</td>
     <td>{{customer.email}}</td>
     <td>{{customer.address}}</td>
-    <td><button class="btn btn-primary">Xóa</button></td>
-    <td><button [routerLink]="['/customer/update/',customer.id]">Sửa</button></td>
+    <td>{{customer.customerType.name}}</td>
+    <td><button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="item=customer">Xóa</button></td>
+    <td><button class="btn btn-outline-danger" [routerLink]="['/customer/update',customer.id]" >Sửa</button></td>
   </tr>
   </tbody>
 
 </table>
+
+<!--modal xóa-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Xoa Customer</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>bạn muốn xóa {{item.name}} không</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="delete(item.id)">Xóa
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "giày",
+      "origin": "china",
+      "productType": {
+        "id": 1,
+        "name": "nội địa"
+      }
+    },{
+      "id": 2,
+      "name": "áo",
+      "origin": "china",
+      "productType": {
+        "id": 1,
+        "name": "nội địa"
+      }
+    },{
+      "id": 3,
+      "name": "quần",
+      "origin": "china",
+      "productType": {
+        "id": 2,
+        "name": "nhập khẩu"
+      }
+    },{
+      "id": 4,
+      "name": "mũ",
+      "origin": "china",
+      "productType": {
+        "id": 2,
+        "name": "nhập khẩu"
+      }
+    }
+  ],
+   "productTypes": [
+     {
+       "id": 1,
+       "name": "nội địa"
+     },{
+       "id": 2,
+       "name": "nhập khẩu"
+     }
+   ]
+}

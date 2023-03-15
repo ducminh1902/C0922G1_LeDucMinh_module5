@@ -12,13 +12,15 @@ import {CategoryService} from '../../service/category.service';
 export class ProductListComponent implements OnInit {
   products: Product[] = [];
 
+  item: Product = {};
+
 
   constructor(private productService: ProductService) {
-    this.getAll();
+
   }
 
   ngOnInit(): void {
-
+    this.getAll();
   }
 
 
@@ -27,5 +29,12 @@ getAll() {
     console.log(next);
     this.products = next;
   });
+}
+
+delete() {
+    this.productService.deleteProduct(this.item.id).subscribe(next => {
+      alert('xóa thành công');
+      this.ngOnInit();
+    });
 }
 }

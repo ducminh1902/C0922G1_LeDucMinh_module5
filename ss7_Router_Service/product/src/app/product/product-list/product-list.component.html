@@ -16,5 +16,28 @@
     <td>{{product.category.name}}</td>
 <!--    <td><a [routerLink]=['/product/update',product.id]>Sửa</a></td>-->
     <td><button [routerLink]="['/product/update',product.id]">sửa</button></td>
+    <td>
+      <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="item=product">Xóa</button>
+    </td>
   </tr>
 </table>
+
+<!--modal xóa-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Xoa Customer</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>bạn muốn xóa {{item.name}} không</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">dong</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="delete(item.id)">xoa
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

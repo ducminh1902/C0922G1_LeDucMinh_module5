@@ -9,11 +9,12 @@ import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { NavigationComponent } from './component/navigation/navigation.component';
 import { CustomerListComponent } from './component/customer/customer-list/customer-list.component';
-import { CustomerEditComponent } from './component/customer/customer-edit/customer-edit.component';
-import { CustomerCreateComponent } from './component/customer/customer-create/customer-create.component';
 import { ContractCreateComponent } from './component/contract/contract-create/contract-create.component';
 import {AppRoutingModule} from "./app-routing.module";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+import { CustomerCreateComponent } from './component/customer/customer-create/customer-create.component';
+import { CustomerUpdateComponent } from './component/customer-update/customer-update.component';
 
 @NgModule({
   declarations: [
@@ -25,15 +26,16 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     FooterComponent,
     NavigationComponent,
     CustomerListComponent,
-    CustomerEditComponent,
-    CustomerCreateComponent,
     ContractCreateComponent,
+    CustomerCreateComponent,
+    CustomerUpdateComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

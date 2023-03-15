@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {CustomerService} from "../../../service/customer/customer.service";
-import {Route, Router} from "@angular/router";
+import {Router} from "@angular/router";
+import {CustomerTypeService} from "../../../service/customer/customer-type.service";
+import {CustomerType} from "../../../model/customer/customer-type";
 
 @Component({
   selector: 'app-customer-create',
@@ -9,27 +11,35 @@ import {Route, Router} from "@angular/router";
   styleUrls: ['./customer-create.component.css']
 })
 export class CustomerCreateComponent implements OnInit {
-
-  customerForm: FormGroup = new FormGroup({
+   customerTypes: CustomerType[]=[];
+  customerForm: FormGroup= new FormGroup({
     id: new FormControl(),
     name: new FormControl(),
     dateOfBirth: new FormControl(),
     gender: new FormControl(),
-    idCard: new FormControl(),
+    idCard:new FormControl(),
     phoneNumber:new FormControl(),
     email:new FormControl(),
-    address: new FormControl()
-  });
+    address:new FormControl(),
+    customerType:new FormControl(),
+  })
+
   constructor(private customerService: CustomerService,
-              private router: Router) { }
+              private router: Router,
+              private customerTypeService: CustomerTypeService) { }
 
   ngOnInit(): void {
+    this.customerTypeService.getAll().subscribe(next => {
+      this.customerTypes = next;
+    })
   }
 
   add(){
-    const customer = this.customerForm.value;
-    this.customerService.saveCustomer(customer);
-    this.customerForm.reset();
-    this.router.navigateByUrl('/customer')
+    const customer = this.customerForm.value
+    this.customerService.addCustomer(customer).subscribe(next => {
+      this.customerForm.reset();
+      this.router.navigateByUrl('customer');
+      alert("đã thêm mới khách hàng");
+    })
   }
 }

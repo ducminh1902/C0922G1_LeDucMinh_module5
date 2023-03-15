@@ -22,20 +22,6 @@ export class ProductService {
     return this.httpClient.post<>(this.API, product);
   }
 
-  // findById(id: number) {
-  //   return this.getAll().find(item => item.id === id);
-  // }
-
-  //
-  // updateProduct(id: number, product: Product) {
-  //   for (let i = 0; i < this.products.length ; i++) {
-  //     if (this.products[i].id === id) {
-  //         this.products[i] = product;
-  //         break;
-  //     }
-  //   }
-  // }
-
   delete(id: number): Observable<Product[]> {
     return this.httpClient.delete<Product[]>(this.API + '/' + id);
   }
@@ -46,5 +32,9 @@ export class ProductService {
 
   updateProduct(id: number, product: Product) {
     return this.httpClient.patch(this.API + '/' + id, product );
+  }
+
+  deleteProduct(id: number): Observable<Product> {
+    return this.httpClient.delete(this.API + '/' + id);
   }
 }
