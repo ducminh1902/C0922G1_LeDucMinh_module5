@@ -1,0 +1,130 @@
+{
+  "facilities": [
+    {
+      "id": 1,
+      "name": "Room Twin 01",
+      "area": 100,
+      "cost": 2,
+      "maxpeople": 5,
+      "standardRoom": "vip1",
+      "descriptionOtherConvenience": "xe đạp, xe điện",
+      "poolArea": 15,
+      "numberOfFloor": 3,
+      "facilityFree": "buffet sáng",
+      "facilityType": {
+        "id": 1,
+        "name": "vip 1"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Room Twin 02",
+      "area": 120,
+      "cost": 2.5,
+      "maxpeople": 8,
+      "standardRoom": "vip2",
+      "descriptionOtherConvenience": "xe đạp, xe điện",
+      "poolArea": 20,
+      "numberOfFloor": 3,
+      "facilityFree": "buffet sáng",
+      "facilityType": {
+        "id": 2,
+        "name": "vip 2"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Room Twin 03",
+      "area": 120,
+      "cost": 2.5,
+      "maxpeople": 8,
+      "standardRoom": "vip2",
+      "descriptionOtherConvenience": "xe đạp, xe điện",
+      "poolArea": 20,
+      "numberOfFloor": 3,
+      "facilityFree": "buffet sáng",
+      "facilityType": {
+        "id": 2,
+        "name": "vip 2"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Room Twin 02",
+      "area": 120,
+      "cost": 2.5,
+      "maxpeople": 8,
+      "standardRoom": "vip2",
+      "descriptionOtherConvenience": "xe đạp, xe điện",
+      "poolArea": 20,
+      "numberOfFloor": 3,
+      "facilityFree": "buffet sáng",
+      "facilityType": {
+        "id": 2,
+        "name": "vip 2"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Room Twin 02",
+      "area": 120,
+      "cost": 2.5,
+      "maxpeople": 8,
+      "standardRoom": "vip2",
+      "descriptionOtherConvenience": "xe đạp, xe điện",
+      "poolArea": 20,
+      "numberOfFloor": 3,
+      "facilityFree": "buffet sáng",
+      "facilityType": {
+        "id": 2,
+        "name": "vip 2"
+      }
+    },
+    {
+      "id": 6,
+      "name": "kkk",
+      "area": "1",
+      "cost": "1",
+      "maxPeople": null,
+      "standardRoom": "3 sao",
+      "descriptionOtherConvenience": "xe điện",
+      "poolArea": "12",
+      "numberOfFloor": "2",
+      "facilityFree": "buffet",
+      "facilityType": {
+        "id": 2,
+        "name": "vip 2"
+      }
+    },
+    {
+      "id": 8,
+      "name": "minh mi ",
+      "area": "1",
+      "cost": "3",
+      "maxpeople": "1",
+      "standardRoom": "3 sao",
+      "descriptionOtherConvenience": "xe điện ",
+      "poolArea": "12",
+      "numberOfFloor": "8",
+      "facilityFree": "buffet",
+      "facilityType": {
+        "id": 1,
+        "name": "vip 1"
+      }
+    }
+  ],
+  "facilityTypes": [
+    {
+      "id": 1,
+      "name": "vip 1"
+    },
+    {
+      "id": 2,
+      "name": "vip 2"
+    },
+    {
+      "id": 3,
+      "name": "vip 3"
+    }
+  ]
+}

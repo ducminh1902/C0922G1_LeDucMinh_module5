@@ -13,6 +13,7 @@ import {Observable} from "rxjs";
 })
 export class CustomerUpdateComponent implements OnInit {
     customerTypes: Observable<CustomerType[]>=this.customerTypeService.getAll();
+
   customerForm: FormGroup=new FormGroup({
     id: new FormControl(),
     name: new FormControl(),

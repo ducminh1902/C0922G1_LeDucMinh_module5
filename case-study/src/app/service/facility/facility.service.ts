@@ -1,68 +1,35 @@
 import { Injectable } from '@angular/core';
 import {Facility} from "../../model/facilty/facility";
+import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class FacilityService {
 
-  facilities:Facility[]=[{
-    id:1,
-    name:"Room Twin 01",
-    area:100,
-    cost:2.000,
-    maxpeople:5,
-    standardRoom:"vip1",
-    descriptionOtherConvenience:"xe đạp, xe điện",
-    poolArea:15,
-    numberOfFloor:3,
-    facilityFree:"buffet sáng"
-  },{
-    id:2,
-    name:"Room Twin 02",
-    area:120,
-    cost:2.500,
-    maxpeople:8,
-    standardRoom:"vip2",
-    descriptionOtherConvenience:"xe đạp, xe điện",
-    poolArea:20,
-    numberOfFloor:3,
-    facilityFree:"buffet sáng"
-  },{
-    id:3,
-    name:"Room Twin 03",
-    area:150,
-    cost:3.000,
-    maxpeople:10,
-    standardRoom:"vip3",
-    descriptionOtherConvenience:"xe đạp, xe điện",
-    poolArea:25,
-    numberOfFloor:5,
-    facilityFree:"buffet sáng"
-  },
-  ]
-  constructor() {}
+ private API =" http://localhost:3000/facilities";
 
-  getAll(){
-    return this.facilities;
+  constructor(private httpClient: HttpClient) {}
+
+  // @ts-ignore
+  getAll(): Observable<Facility[]>{
+    return this.httpClient.get<Facility[]>(this.API)
   }
 
-  saveFacility(facility: Facility){
-    const id = this.facilities.length+1;
-    facility.id = id;
-    this.facilities.push(facility);
+  deleteFacility(id: number): Observable<Facility>{
+    return  this.httpClient.delete<Facility>(this.API + '/' +id)
   }
 
-  findById(id: number){
-    return this.getAll().find(item => item.id === id)
+  addFacility(facility: Facility):Observable<Facility[]>{
+    return this.httpClient.post<Facility[]>(this.API,facility)
   }
 
-  updateFacility(id: number,facility: Facility){
-    for (let i = 0; i <this.facilities.length ; i++) {
-      if (this.facilities[i].id == id){
-        this.facilities[i] = facility;
-        break;
-      }
-    }
+  findById(id: number):Observable<Facility[]>{
+    return this.httpClient.get<Facility[]>(this.API + '/' +id)
+  }
+
+  updateFacility(id:number,facility:Facility):Observable<Facility[]>{
+    return this.httpClient.patch<Facility[]>(this.API + '/' + id,facility)
   }
 }

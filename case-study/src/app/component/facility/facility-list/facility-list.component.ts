@@ -12,12 +12,23 @@ export class FacilityListComponent implements OnInit {
 
   facilities:Facility[]=[];
 
+  item : Facility ={};
+
   constructor(private facilityService: FacilityService) { }
 
   ngOnInit(): void {
    this.getAll();
   }
    getAll(){
-   this.facilities = this.facilityService.getAll();
+   this.facilityService.getAll().subscribe(next => {
+     this.facilities = next
+   })
+   }
+
+   delete(id: number){
+    this.facilityService.deleteFacility(this.item.id).subscribe(next =>{
+      alert("đã xóa thành công");
+      this.ngOnInit();
+    })
    }
 }

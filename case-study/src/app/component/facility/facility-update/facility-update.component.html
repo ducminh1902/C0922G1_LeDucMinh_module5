@@ -1,4 +1,4 @@
-<h1>Chỉnh sửa thông tin dịch vụ</h1>
+<h1>Điền thông tin dịch vụ</h1>
 <form [formGroup]="facilityForm" (ngSubmit)="update()" >
   <table>
     <tr>
@@ -18,11 +18,11 @@
       <td><input type="text" formControlName="maxpeople"></td>
     </tr>
     <tr>
-      <td>Tiêu chuẩn phòng</td>
+      <td>Tiêu Chuẩn phòng</td>
       <td><input type="text" formControlName="standardRoom"></td>
     </tr>
     <tr>
-      <td>Dịch vụ khác</td>
+      <td>Tiện ích khác</td>
       <td><input type="text" formControlName="descriptionOtherConvenience"></td>
     </tr>
     <tr>
@@ -34,10 +34,18 @@
       <td><input type="text" formControlName="numberOfFloor"></td>
     </tr>
     <tr>
-      <td>Tiện ích</td>
+      <td>Dịch vụ khác</td>
       <td><input type="text" formControlName="facilityFree"></td>
     </tr>
+    <tr>
+      <td>Loại dịch vụ</td>
+      <td>
+        <select formControlName="facilityType">
+          <option [ngValue]="null">Lựa chọn</option>
+          <option *ngFor="let facilityType of facilityTypes" [ngValue]="facilityType">{{facilityType.name}}</option>
+        </select>
+      </td>
+    </tr>
   </table>
-  <button type="submit">Lưu dịch vụ</button>
+  <button type="submit">Cập nhật dịch vụ</button>
 </form>
-
