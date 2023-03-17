@@ -1,0 +1,60 @@
+<h1 style="text-align: center">Danh Sách Học Sinh</h1>
+
+<nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+    <button routerLink="/student/create">Thêm mới học sinh</button>
+    <form class="d-flex" role="search">
+      <input type="text" placeholder="tên học sinh" #name>
+      <button type="submit" (click)="search(name.value)">Tìm kiếm</button>
+    </form>
+  </div>
+</nav>
+
+
+<table class="table table-striped">
+  <tr>
+    <th>#</th>
+    <th>Tên Học Sinh</th>
+    <th>Giới Tính</th>
+    <th>Email</th>
+    <th>Lớp</th>
+    <th>Chức Năng</th>
+    <th>Chức Năng</th>
+  </tr>
+  <tr *ngFor="let student of students | paginate: { itemsPerPage: 3, currentPage: page},index as i">
+    <td scope="row">{{i + 1}}</td>
+    <td>{{student.name}}</td>
+    <td *ngIf="student.gender == 1">
+      Nam
+    </td>
+    <td *ngIf="student.gender == 0">
+      Nữ
+    </td>
+    <td>{{student.email}}</td>
+    <td>{{student.studentType.name}}</td>
+    <td><button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="item=student">Xóa</button></td>
+    <td><button class="btn btn-outline-danger" [routerLink]="['/student/update',student.id]">Sửa</button></td>
+  </tr>
+</table>
+<pagination-controls (pageChange)="page = $event" style="text-align: right"></pagination-controls>
+<!--<pagination-controls (pageChange)="page = $event" style="text-align: left"></pagination-controls>-->
+
+<!--modal xóa-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Xoa Customer</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>bạn muốn xóa {{item.name}} không</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">dong</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="delete(item.id)">xoa
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

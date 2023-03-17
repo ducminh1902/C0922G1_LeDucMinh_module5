@@ -1,0 +1,51 @@
+<h1>Điền thông tin xe</h1>
+<form [formGroup]="carForm" (ngSubmit)="add()" >
+  <table>
+    <tr>
+      <td>Số Xe</td>
+      <td><input formControlName="soXe"></td>
+    </tr>
+    <tr>
+      <td>Loại Xe</td>
+      <td>
+        <select formControlName="carType">
+          <option [ngValue]="null" >Lựa chọn</option>
+          <option *ngFor="let car of carTypes" [ngValue]="car" >{{car.name}}</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>Tên Nhà Xe</td>
+      <td><input formControlName="tenNhaXe"></td>
+    </tr>
+    <tr>
+      <td>Điểm Đi</td>
+      <td><input formControlName="diemDi"></td>
+    </tr>
+    <tr>
+      <td>Điểm Đến</td>
+      <td><input formControlName="diemDen"></td>
+    </tr>
+    <tr>
+      <td>Số Điện Thoại</td>
+      <td><input formControlName="soDienThoai"></td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td><input formControlName="email"></td>
+    </tr>
+    <tr>
+      <td>Giờ Đi</td>
+      <td><input  formControlName="gioDi"></td>
+    </tr>
+    <tr>
+      <td>Giờ Đến</td>
+      <td><input formControlName="gioDen"></td>
+    </tr>
+  </table>
+  <br>
+  <button routerLink="/car" class="btn btn-outline-success">Quay lại</button>
+  <button type="submit" style="margin-left: 100px" class="btn btn-outline-danger">Thêm Mới</button>
+
+</form>
+

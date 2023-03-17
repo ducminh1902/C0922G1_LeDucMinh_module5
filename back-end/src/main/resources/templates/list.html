@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body>
+<h1>Danh Sách Xe</h1>
+<h5 th:text="${mess}"></h5>
+<table class="table">
+  <tr>
+    <td>Số Xe</td>
+    <td>Loại Xe</td>
+    <td>Tên Nhà Xe</td>
+    <td>Điểm Đi</td>
+    <td>Điểm Đến</td>
+    <td>Số Điện Thoại</td>
+    <td>Email</td>
+    <td>Giờ Đi</td>
+    <td>Giờ Đến</td>
+    <td>Chức Năng</td>
+  </tr>
+  <tr th:each="car : ${carList}">
+    <td th:text="${car.soXe}"></td>
+    <td th:text="${car.carType.name}"></td>
+    <td th:text="${car.tenNhaxe}"></td>
+    <td th:text="${car.diemDi}"></td>
+    <td th:text="${car.diemDen}"></td>
+    <td th:text="${car.soDienThoai}"></td>
+    <td th:text="${car.email}"></td>
+    <td th:text="${car.gioDi}"></td>
+    <td th:text="${car.gioDen}"></td>
+    <td><button th:attr="onclick=|removeCar('${car.id}','${car.soXe}')|"
+                class="btn btn-outline-info save"
+                data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fas fa-trash-alt"></i>
+    </button></td>
+  </tr>
+</table>
+
+<center>
+  <div>
+    <a th:href="@{/car(page=${carList.number -1})}" th:if="${carList.hasPrevious()}">Trước</a>
+    <span th:text="${carList.number +1}"></span>/<span th:text="${carList.totalPages}"></span>
+    <a th:href="@{/car(page=${carList.number +1})}" th:if="${carList.hasNext()}">Sau</a>
+  </div>
+</center>
+</body>
+</html>
+
+<!-- Modal Delete-->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel">Delete Customer</h5>
+      </div>
+      <div class="modal-body">
+        <form th:action="@{/car/delete}" id="deleteForm" method="get">
+          <input type="text" id="idDelete" name="idDelete" hidden>
+          <span>Do you want delete </span><span class="text-danger" id="soXeDelete"></span>?
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-md" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary btn-md save" form="deleteForm">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function removeCar(id, soXe) {
+    document.getElementById("idDelete").value = id;
+    document.getElementById("soXeDelete").innerText = soXe;
+  }
+</script>

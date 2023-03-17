@@ -1,0 +1,52 @@
+<h1 style="text-align: center">Danh Sách Các Xe Đăng Ký Ở Bến Xe XYZ</h1>
+<a routerLink="/car/create">Thêm mới xe</a>
+<table class="table">
+  <tr style="color: red">
+    <th>Số Xe</th>
+    <th>Loại Xe</th>
+    <th>Tên Nhà Xe</th>
+    <th>Điểm Đi</th>
+    <th>Điểm Đến</th>
+    <th>Số Điện Thoại</th>
+    <th>Email</th>
+    <th>Giờ Đi</th>
+    <th>Giờ Đến</th>
+    <th>Chức Năng</th>
+    <th>Chức Năng</th>
+  </tr>
+  <tr *ngFor="let car of listCars ">
+    <td><b>{{car.soXe}}</b></td>
+    <td>{{car.carType.name}}</td>
+    <td>{{car.tenNhaXe}}</td>
+    <td>{{car.diemDi}}</td>
+    <td>{{car.diemDen}}</td>
+    <td>{{car.soDienThoai}}</td>
+    <td>{{car.email}}</td>
+    <td>{{car.gioDi}}</td>
+    <td>{{car.gioDen}}</td>
+    <td><button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="item=car">Xóa</button></td>
+    <td><button class="btn btn-outline-success" [routerLink]="['/car/update',car.id]" >Sửa</button></td>
+  </tr>
+</table>
+
+
+
+<!--modal Xóa-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Xoa Customer</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>bạn có đồng ý xóa thông tin của xe khách có số xe <b>{{item.soXe}}</b>  không</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="deleteCar(item.id)">Xóa
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

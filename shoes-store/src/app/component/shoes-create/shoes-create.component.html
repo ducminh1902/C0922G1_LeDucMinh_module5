@@ -1,0 +1,23 @@
+
+  <h1 style="text-align: center;">Information Shoes</h1>
+  <form [formGroup]="shoesForm" (ngSubmit)="add()" >
+  <table>
+    <tr>
+      <td>Name:</td>
+      <td><input formControlName="name"></td>
+    </tr>
+    <tr>
+      <td>brand:</td>
+      <td><input formControlName="brand"></td>
+    </tr>
+    <tr>
+      <td>brand:</td>
+      <td><select formControlName="shoesType">
+        <option *ngFor="let shoesShop of shoesTypes" [ngValue]="shoesShop">{{shoesShop.name}}</option>
+      </select>
+      </td>
+    </tr>
+  </table>
+  <button type="submit">Add New</button>
+</form>
+

@@ -40,8 +40,7 @@
     <tr>
       <td>Loại dịch vụ</td>
       <td>
-        <select formControlName="facilityType">
-          <option [ngValue]="null">Lựa chọn</option>
+        <select formControlName="facilityType" [compareWith]="comparaFn">
           <option *ngFor="let facilityType of facilityTypes" [ngValue]="facilityType">{{facilityType.name}}</option>
         </select>
       </td>

@@ -12,7 +12,8 @@ import {Observable} from "rxjs";
   styleUrls: ['./customer-update.component.css']
 })
 export class CustomerUpdateComponent implements OnInit {
-    customerTypes: Observable<CustomerType[]>=this.customerTypeService.getAll();
+    // @ts-ignore
+  customerTypes: CustomerType[] = this.getCustomerType();
 
   customerForm: FormGroup=new FormGroup({
     id: new FormControl(),
@@ -48,4 +49,13 @@ export class CustomerUpdateComponent implements OnInit {
     })
   }
 
+  getCustomerType(){
+    this.customerTypeService.getAll().subscribe(next =>{
+      this.customerTypes = next
+    })
+  }
+
+  comparaFn(o1: CustomerType, o2: CustomerType): boolean {
+    return o1 && o2 ? o1.id === o2.id : o1 === o2;
+  }
 }

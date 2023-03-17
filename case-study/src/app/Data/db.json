@@ -108,8 +108,8 @@
       "email": "nguyenvanh@gmail.com",
       "address": "đắk lắk",
       "customerType": {
-        "id": 1,
-        "name": "khách thường"
+        "id": 2,
+        "name": "khách vip"
       }
     }
   ],

@@ -1,0 +1,55 @@
+<h1 style="color: orangered;text-align: center">My Shoes Store</h1>
+
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <a routerLink="/shoes/create"><button type="button" class="btn btn-outline-primary">Add New Shoes</button></a>
+    <form class="d-flex">
+      <input type="text" placeholder="Name" #name>
+      <button type="submit" (click)="search(name.value)">Search</button>
+    </form>
+  </div>
+</nav>
+<table class="table">
+  <tr>
+    <th>#</th>
+    <th>Name</th>
+    <th>Brand</th>
+    <th>Shoes Style</th>
+    <th>Chức Năng</th>
+    <th>Chức Năng</th>
+  </tr>
+  <tr *ngFor="let shoesShop of shoes | paginate: { itemsPerPage: 3, currentPage: page},index as i">
+    <td scope="row">{{shoesShop.id}}</td>
+    <td>{{shoesShop.name}}</td>
+    <td>{{shoesShop.brand}}</td>
+    <td>{{shoesShop.shoesType.name}}</td>
+    <td><button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="item=shoesShop">Xóa</button></td>
+    <td><button class="btn btn-outline-success" [routerLink]="['/shoes/update',shoesShop.id]" >Sửa</button></td>
+  </tr>
+</table >
+<pagination-controls (pageChange)="page = $event" style="text-align: left"></pagination-controls>
+
+
+
+
+
+
+<!--modal xóa-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Xoa Customer</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>bạn muốn xóa {{item.name}} không</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">dong</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="delete(item.id)">xoa
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

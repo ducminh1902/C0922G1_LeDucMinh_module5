@@ -37,7 +37,7 @@
     <tr>
       <td>Loại Khách</td>
       <td>
-        <select formControlName="customerType">
+        <select formControlName="customerType" [compareWith]="comparaFn">
           <option *ngFor="let customerType of customerTypes" [ngValue]="customerType" >{{customerType.name}}</option>
         </select>
       </td>

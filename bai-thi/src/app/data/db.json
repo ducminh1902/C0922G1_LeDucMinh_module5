@@ -1,0 +1,59 @@
+{
+  "cars": [
+    {
+      "id": 3,
+      "soXe": "2311",
+      "tenNhaXe": "Mai Linh",
+      "diemDi": "Đà Nẵng",
+      "diemDen": "Huế",
+      "soDienThoai": "0935845632",
+      "email": "mailinh@gmail.com",
+      "gioDi": "06:20",
+      "gioDen": "08:00",
+      "carType": {
+        "id": 1,
+        "name": "giường nằm"
+      }
+    },
+    {
+      "id": 4,
+      "soXe": "1231",
+      "tenNhaXe": "Mai Linh",
+      "diemDi": "Đà Nẵng",
+      "diemDen": "Huế",
+      "soDienThoai": "0905678946",
+      "email": "mailinh@gmail.com",
+      "gioDi": "21:00",
+      "gioDen": "23:00",
+      "carType": {
+        "id": 1,
+        "name": "giường nằm"
+      }
+    },
+    {
+      "id": 5,
+      "soXe": "1923",
+      "tenNhaXe": "Phương Trang",
+      "diemDi": "Đà Nẵng ",
+      "diemDen": "Hà Nội",
+      "soDienThoai": "0905923378",
+      "email": "phuongtrang@gmail.com",
+      "gioDi": "17:00",
+      "gioDen": "22:00",
+      "carType": {
+        "id": 2,
+        "name": "ghế ngồi"
+      }
+    }
+  ],
+  "carTypes": [
+    {
+      "id": 1,
+      "name": "giường nằm"
+    },
+    {
+      "id": 2,
+      "name": "ghế ngồi"
+    }
+  ]
+}

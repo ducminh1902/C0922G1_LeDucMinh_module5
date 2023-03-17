@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FacilityService} from "../../../service/facility/facility.service";
 import {FacilityTypeService} from "../../../service/facility/facility-type.service";
 import {ActivatedRoute, Router} from "@angular/router";
-import {Observable} from "rxjs";
+import {Observable, Subscription} from "rxjs";
 import {CustomerType} from "../../../model/customer/customer-type";
 import {FacilityType} from "../../../model/facilty/facility-type";
 import {FormControl, FormGroup} from "@angular/forms";
@@ -14,7 +14,8 @@ import {FormControl, FormGroup} from "@angular/forms";
 })
 export class FacilityUpdateComponent implements OnInit {
 
-   facilityTypes: Observable<FacilityType[]> = this.facilityTypeService.getAll();
+   // @ts-ignore
+  facilityTypes: FacilityType[] = this.getFacilityType();
    facilityForm : FormGroup = new FormGroup({
      id: new FormControl(),
      name: new FormControl(),
@@ -51,4 +52,12 @@ update(){
        this.router.navigateByUrl('facility');
      })
 }
+getFacilityType(){
+     this.facilityTypeService.getAll().subscribe(next => {
+       this.facilityTypes = next;
+     })
+}
+  comparaFn(o1: FacilityType, o2: FacilityType): boolean {
+    return o1 && o2 ? o1.id === o2.id : o1 === o2;
+  }
 }

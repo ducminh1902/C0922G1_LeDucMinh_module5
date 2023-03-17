@@ -1,0 +1,33 @@
+<<h1>Điền thông tin học sinh</h1>
+<form [formGroup]="studentForm" (ngSubmit)="add()">
+  <table>
+    <tr>
+      <td>Tên học sinh :</td>
+      <td><input type="text" formControlName="name"></td>
+    </tr>
+    <tr>
+      <td>Giới tính :</td>
+      <td>
+        <select formControlName="gender">
+        <option value="null">Lựa chọn</option>
+        <option value="1">Nam</option>
+        <option value="0">Nữ</option>
+      </select>
+      </td>
+    </tr>
+    <tr>
+      <td>Email :</td>
+      <td><input type="text" formControlName="email"></td>
+    </tr>
+    <tr>
+      <td>Lớp học</td>
+      <td>
+        <select formControlName="studentType">
+          <option [ngValue]="null">lựa chọn</option>
+          <option *ngFor="let studentType of studentTypes" [ngValue]="studentType" >{{studentType.name}}</option>
+        </select>
+      </td>
+    </tr>
+  </table>
+  <button class="btn btn-outline-success" type="submit">Thêm mới học sinh</button>
+</form>

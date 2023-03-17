@@ -1,0 +1,81 @@
+{
+  "shoes": [
+    {
+      "id": 1,
+      "name": "jordan 1",
+      "brand": "nike",
+      "shoesType": {
+        "id": 1,
+        "name": "sport"
+      }
+    },
+    {
+      "id": 2,
+      "name": "checkboard",
+      "brand": "vans",
+      "shoesType": {
+        "id": 2,
+        "name": "slip on"
+      }
+    },
+    {
+      "id": 3,
+      "name": "jordan",
+      "brand": "nike",
+      "shoesType": {
+        "id": 1,
+        "name": "sport"
+      }
+    },
+    {
+      "id": 4,
+      "name": "stan smith",
+      "brand": "adidas",
+      "shoesType": {
+        "id": 1,
+        "name": "sport"
+      }
+    },
+    {
+      "id": 5,
+      "name": "super star",
+      "brand": "adidas",
+      "shoesType": {
+        "id": 1,
+        "name": "sport"
+      }
+    },
+    {
+      "id": 6,
+      "name": "jordan122222",
+      "brand": "nike",
+      "shoesType": {
+        "id": 3,
+        "name": "slides"
+      }
+    },
+    {
+      "id": 7,
+      "name": "minh",
+      "brand": "minh",
+      "shoesType": {
+        "id": 1,
+        "name": "sport"
+      }
+    }
+  ],
+  "shoesTypes": [
+    {
+      "id": 1,
+      "name": "sport"
+    },
+    {
+      "id": 2,
+      "name": "slip on"
+    },
+    {
+      "id": 3,
+      "name": "slides"
+    }
+  ]
+}
